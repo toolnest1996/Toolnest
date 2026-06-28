@@ -1,0 +1,51 @@
+import { NextResponse } from "next/server";
+
+const endpoints = [
+  { method: "GET", path: "/api/v1/status", description: "API health check" },
+  { method: "GET", path: "/api/v1/docs", description: "API documentation" },
+  { method: "POST", path: "/api/contact", description: "Submit contact form" },
+  { method: "GET", path: "/api/v1/base64", description: "Base64 API schema" },
+  { method: "POST", path: "/api/v1/base64", description: "Encode/decode Base64" },
+  { method: "GET", path: "/api/v1/url", description: "URL encode/decode API schema" },
+  { method: "POST", path: "/api/v1/url", description: "Encode/decode URL (RFC 3986)" },
+  { method: "GET", path: "/api/v1/case", description: "Case converter API schema" },
+  { method: "POST", path: "/api/v1/case", description: "Convert text case (19 modes)" },
+  { method: "GET", path: "/api/v1/reverse", description: "Reverse text API schema" },
+  { method: "POST", path: "/api/v1/reverse", description: "Reverse text (8 modes)" },
+  { method: "GET", path: "/api/v1/dedupe", description: "Remove duplicates API schema" },
+  { method: "POST", path: "/api/v1/dedupe", description: "Remove duplicates (10 modes)" },
+  { method: "GET", path: "/api/v1/uuid", description: "UUID generator API schema" },
+  { method: "POST", path: "/api/v1/uuid", description: "Generate UUIDs (v1–v8, bulk)" },
+  { method: "GET", path: "/api/v1/hash", description: "Hash generator API schema" },
+  { method: "POST", path: "/api/v1/hash", description: "Hash text (MD5, SHA, BLAKE, HMAC)" },
+  { method: "GET", path: "/api/v1/pdf/word-to-pdf", description: "Word to PDF API schema" },
+  { method: "POST", path: "/api/v1/pdf/word-to-pdf", description: "Convert Word document to PDF (base64)" },
+  { method: "GET", path: "/api/v1/pdf/to-word", description: "PDF to Word API schema" },
+  { method: "POST", path: "/api/v1/pdf/to-word", description: "Convert PDF to Word (base64)" },
+  { method: "GET", path: "/api/v1/tts", description: "Text-to-speech API schema" },
+  { method: "POST", path: "/api/v1/tts", description: "Synthesize speech (MP3/WebM)" },
+  { method: "GET", path: "/api/v1/tts/voices", description: "List neural TTS voices" },
+  { method: "POST", path: "/api/v1/tts/extract", description: "Extract text from web page URL" },
+  { method: "GET", path: "/api/v1/pdf/merge", description: "PDF merge API schema" },
+  { method: "GET", path: "/api/v1/pdf/split", description: "PDF split API schema" },
+  { method: "GET", path: "/api/v1/pdf/compress", description: "PDF compress API schema" },
+  { method: "POST", path: "/api/v1/pdf/compress", description: "Compress PDF (base64)" },
+  { method: "POST", path: "/api/tool-usage", description: "Log tool usage" },
+  { method: "GET", path: "/api/tool-usage", description: "Get usage analytics" },
+  { method: "POST", path: "/api/payment/create-checkout", description: "Create Stripe checkout" },
+  { method: "GET", path: "/api/keys", description: "List API keys (Enterprise)" },
+  { method: "POST", path: "/api/keys", description: "Generate API key (Enterprise)" },
+  { method: "GET", path: "/api/jobs/[id]", description: "Poll job status" },
+  { method: "POST", path: "/api/user/profile", description: "Update user profile" },
+  { method: "GET", path: "/api/user/stats", description: "Get user stats" },
+];
+
+export async function GET() {
+  return NextResponse.json({
+    name: "ToolNest API",
+    version: "1.0.0",
+    baseUrl: "/api/v1",
+    authentication: "Bearer token (Enterprise API keys) or Supabase session",
+    endpoints,
+  });
+}

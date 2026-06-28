@@ -1,0 +1,1291 @@
+╔══════════════════════════════════════════════════════════╗
+║     TOOLNEST.IO — ULTRA PRO MAX FULLSTACK WEBSITE        ║
+║         Complete Build Prompt v3.4                       ║
+╚══════════════════════════════════════════════════════════╝
+
+You are a Senior Full-Stack Engineer with 10+ years experience.
+Build a PRODUCTION-READY, ULTRA PRO MAX website called 
+"ToolNest.io" — the world's most powerful all-in-one online 
+tools platform. Better than iLovePDF, SmallPDF, SaveFrom, 
+and Y2Mate COMBINED.
+
+Every single file must be 100% complete. No placeholder code.
+No "TODO" comments. No incomplete functions. EVERYTHING works.
+
+════════════════════════════════════════
+ TECH STACK — ULTRA PRO MAX
+════════════════════════════════════════
+
+FRONTEND (UPGRADED — PRO MAX UI/UX):
+├── Next.js 15 (App Router + Server Components + Server Actions)
+├── React 19 (Suspense, useActionState, useOptimistic)
+├── TypeScript 5 (strict mode)
+├── Tailwind CSS v4 + shadcn/ui (Radix UI primitives)
+├── next-themes (dark / light / system)
+├── Framer Motion 11 (page transitions + micro-interactions)
+├── TanStack Query v5 (server state, cache, retry)
+├── Zustand + persist (favorites, recent tools, UI prefs)
+├── React Hook Form + Zod (all forms validated)
+├── nuqs (URL state — search, filters, category)
+├── cmdk (⌘K global command palette)
+├── fuse.js (fuzzy search across 120 tools)
+├── React Dropzone (drag-drop + paste upload)
+├── sonner (toast notifications)
+├── lucide-react (icon system)
+├── canvas-confetti (success celebration)
+├── next/font (Poppins, Inter, JetBrains Mono — zero layout shift)
+├── next/image + next/dynamic (lazy load heavy components)
+├── @tanstack/react-virtual (virtual scroll — 120 tool grid)
+├── react-pdf (in-browser PDF preview)
+├── Vercel Speed Insights + Analytics
+└── PWA (Serwist — offline shell + install prompt)
+
+FRONTEND UX — PRO FEATURES:
+✅ ⌘K / Ctrl+K command palette (search any tool instantly)
+✅ Fuzzy search bar with keyboard nav (↑↓ Enter Esc)
+✅ Recent tools + Favorites (persisted in localStorage)
+✅ Category pills + URL-synced filters (nuqs)
+✅ Skeleton loaders on every async section
+✅ Suspense boundaries + Error boundaries per route
+✅ Before/After slider (image compress, enhance, bg-remove)
+✅ Live file preview (PDF pages, images, video info)
+✅ Drag-to-reorder file list (PDF merge, image merge)
+✅ Sticky mobile action bar (Process / Download always visible)
+✅ Bottom nav on mobile (Home, Search, Favorites, Profile)
+✅ Breadcrumb navigation on tool pages
+✅ Share tool link + Copy URL button
+✅ Tool onboarding tips (first-time empty state)
+✅ Reduced-motion support (prefers-reduced-motion)
+✅ Full keyboard accessibility (Tab, Enter, Esc, shortcuts)
+✅ Page transition animations (Framer Motion AnimatePresence)
+✅ Loading.tsx + error.tsx per route segment
+✅ OpenGraph image auto per tool page (og/[slug])
+
+BACKEND (SIMPLE — Next.js only, no separate server):
+├── Next.js 15 API Routes (App Router)
+├── Prisma + SQLite (dev) / PostgreSQL (prod) — lives in shared/
+├── NextAuth.js (auth — Google + email)
+├── Local disk storage (uploads/ + temp/)
+├── Simple rate limit middleware
+└── Cron cleanup (delete files after 2 hours)
+
+ADMIN PANEL (UPGRADED — PRO MAX CONTROL CENTER):
+├── admin/ — standalone Next.js 15 app (port 3001)
+├── shared/ — ONE place: database, types, tools, validators
+├── Role system: SUPER_ADMIN | ADMIN | MODERATOR (Prisma enum)
+├── middleware.ts — role guard + IP whitelist + session timeout
+├── 2FA (TOTP) — optional for all admin logins
+├── TanStack Table v8 — sort, filter, paginate, bulk select, CSV export
+├── TanStack Query v5 — live stats refresh every 30s on dashboard
+├── Recharts — line, bar, pie, area charts (usage, revenue, storage)
+├── @dnd-kit — drag-reorder tools & categories
+├── TipTap editor — rich blog CMS (markdown + WYSIWYG)
+├── cmdk — ⌘K admin command palette (jump to any section)
+├── React Hook Form + Zod — all admin forms validated
+├── sonner — action toasts (success/error with undo)
+├── next-themes — admin dark pro theme (slate sidebar)
+├── date-fns — all dates formatted consistently
+├── AuditLog — every admin action logged to DB
+└── ALL admin API under admin/app/api/admin/* (single gateway)
+
+ADMIN UX — PRO FEATURES:
+✅ Collapsible sidebar + breadcrumb on every page
+✅ Live dashboard — users, jobs, revenue, storage (auto-refresh)
+✅ Activity feed — last 20 admin actions on homepage
+✅ Global admin search — find user/tool/post by name or ID
+✅ Bulk actions — ban users, delete files, disable tools (multi-select)
+✅ CSV export — users, subscriptions, jobs, analytics reports
+✅ Date range picker — filter analytics by 7d / 30d / 90d / custom
+✅ Real-time job monitor — status badges (pending/running/done/failed)
+✅ Storage browser — tree view of uploads/ with size + delete
+✅ Tool heatmap — most used tools ranked with usage count
+✅ Revenue chart — Stripe MRR, new subs, churn (Recharts)
+✅ Maintenance mode — toggle + custom message (frontend shows banner)
+✅ Feature flags — enable/disable features without redeploy
+✅ Ad manager — AdSense slot on/off per page zone
+✅ Pricing editor — edit Free/Pro/Enterprise limits live
+✅ Email templates — edit welcome, reset, receipt emails
+✅ API keys — generate/revoke keys for Enterprise users
+✅ Notification center — bell icon, unread count, mark all read
+✅ User impersonation — "View as user" (SUPER_ADMIN only, logged)
+✅ Confirm dialogs — destructive actions need type-to-confirm
+✅ Undo toast — revert last settings change within 10 seconds
+✅ Mobile-responsive admin — sidebar becomes sheet on mobile
+✅ Keyboard shortcuts — G+D dashboard, G+U users, G+T tools, ⌘K search
+
+ADMIN CONTROLS (everything from admin/ dashboard):
+✅ Dashboard — stats cards, charts, activity feed, quick actions
+✅ Users — list, search, ban/unban, change role, impersonate, delete
+✅ Tools — enable/disable 120 tools, drag-reorder, edit SEO meta
+✅ Categories — drag-reorder, edit icon/color/slug, show/hide
+✅ Subscriptions — Pro/Enterprise list, cancel, refund, extend trial
+✅ Files & Jobs — storage browser, force delete, retry/cancel job
+✅ Blog CMS — TipTap rich editor, draft/publish, SEO fields, preview
+✅ Analytics — usage charts, top tools, error rate, export report
+✅ Ads — manage AdSense zones (header, sidebar, tool page)
+✅ Pricing — edit plan limits (file size, tools/day, history days)
+✅ Email Templates — welcome, reset password, receipt, pro upgrade
+✅ Feature Flags — toggle AI tools, video download, maintenance, etc.
+✅ API Keys — Enterprise key generate, revoke, usage count
+✅ Audit Log — full history: who did what, when, IP address
+✅ Notifications — send site-wide banner or email blast to users
+✅ Reports — generate + download PDF/CSV monthly report
+✅ Site Settings — ads, rate limits, max file size, SEO defaults
+✅ System — cleanup script, disk usage, env status, error logs
+✅ Team — manage MODERATOR accounts (SUPER_ADMIN only)
+
+(See PAGES section below for full admin URL list)
+
+WHY SIMPLE:
+✅ One codebase per app — frontend (public) + admin (control)
+✅ shared/ folder — ONE database + types for both apps
+✅ No Redis / BullMQ — jobs tracked in DB or memory Map
+✅ No Socket.io — frontend polls GET /api/jobs/[id]
+✅ No Cloudflare R2 — local uploads/ folder first
+✅ Deploy: frontend :3000 + admin :3001 (same VPS or subdomain)
+
+PROCESSING:
+├── yt-dlp Python (video download)
+├── FFmpeg (video/audio processing)
+├── pdf-lib (PDF manipulation)
+├── PDF.js (PDF rendering)
+├── Sharp.js (image processing)
+├── Tesseract.js (OCR)
+├── Puppeteer (HTML to PDF)
+└── Claude API (AI features)
+
+DEVOPS (SIMPLE):
+├── Docker Compose (app + postgres optional)
+├── Vercel / VPS deploy ready
+└── GitHub Actions (basic CI — lint + build)
+
+════════════════════════════════════════
+ DESIGN SYSTEM — ULTRA PRO MAX
+════════════════════════════════════════
+
+COLORS:
+--primary:     #E8231A  (Deep Red)
+--secondary:   #FF6B35  (Orange)
+--accent:      #FFD700  (Gold)
+--bg-main:     #0D0D1A  (Dark Navy)
+--bg-card:     #12122A  (Dark Blue)
+--bg-hover:    #1A1A3E  (Hover Blue)
+--text-main:   #FFFFFF  (White)
+--text-muted:  #8888AA  (Muted)
+--success:     #00E676  (Green)
+--error:       #FF1744  (Red)
+--gradient-1:  linear-gradient(135deg, #E8231A, #FF6B35)
+--gradient-2:  linear-gradient(135deg, #7B2FF7, #F107A3)
+
+TYPOGRAPHY:
+--font-display: 'Poppins' (700, 800) — hero headlines
+--font-body:    'Inter' (400, 500, 600) — body text
+--font-mono:    'JetBrains Mono' — code, file sizes
+--font-ui:      'DM Sans' — buttons, labels
+
+ANIMATIONS:
+- Page load: fade up stagger (0.1s delay each card)
+- Tool card hover: scale(1.03) + glow shadow + border shimmer
+- Upload zone: pulse border + drag-over scale(1.01)
+- Progress bar: smooth gradient animation + percentage tick
+- Success: confetti burst + checkmark draw animation
+- Dark/light: smooth 300ms transition (next-themes)
+- Command palette: scale + fade (cmdk)
+- Mobile bottom nav: slide up on scroll hide/show
+- View Transitions: shared element on tool card → tool page
+
+RESPONSIVE BREAKPOINTS:
+- mobile:  320px – 639px  (bottom nav, stacked layout)
+- tablet:  640px – 1023px (2-col tool grid)
+- desktop: 1024px – 1535px (3-col tool grid + sidebar)
+- wide:    1536px+        (4-col tool grid, max-w-7xl container)
+
+COMPONENT VARIANTS (shadcn/ui):
+- Button: default, destructive, outline, ghost, link, gradient
+- Card: default, glass (backdrop-blur), elevated (shadow-xl)
+- Input: default, file, search (with ⌘K hint)
+- Badge: category color-coded per 11 categories
+- Tabs: tool options panel (Settings / Preview / History)
+- Sheet: mobile filters + command palette fallback
+- Tooltip: icon buttons + keyboard shortcut hints
+- Dropdown: user menu, sort tools, theme switcher
+
+LOGO:
+- Icon: Bird nest with wrench + gear inside
+- Text: "ToolNest" — Poppins 800
+- Tagline: "Every Tool. One Place."
+- Colors: Red gradient on dark bg
+
+ADMIN DESIGN SYSTEM (separate from public site):
+COLORS:
+--admin-bg:        #0F172A  (Slate 900 — sidebar)
+--admin-bg-main:   #1E293B  (Slate 800 — content area)
+--admin-card:      #334155  (Slate 700 — cards)
+--admin-accent:    #E8231A  (ToolNest red — active nav item)
+--admin-success:   #22C55E  (Green — active/enabled badge)
+--admin-warning:   #F59E0B  (Amber — pending job badge)
+--admin-danger:    #EF4444  (Red — failed/banned badge)
+--admin-text:      #F8FAFC  (Slate 50)
+--admin-muted:     #94A3B8  (Slate 400)
+
+LAYOUT:
+- Fixed collapsible sidebar (240px → 64px icon-only)
+- Sticky top header (search, notifications bell, admin avatar)
+- Content max-width: 1400px with 24px padding
+- Cards: rounded-xl, border border-slate-700, shadow-sm
+- Tables: zebra rows, hover highlight, sticky header
+
+STATUS BADGES:
+- Job pending  → amber pill
+- Job running  → blue pulse pill
+- Job done     → green pill
+- Job failed   → red pill
+- User banned  → red outline badge
+- User pro     → gold gradient badge
+- Tool disabled→ gray strikethrough
+
+════════════════════════════════════════
+ PAGES — COMPLETE LIST
+════════════════════════════════════════
+
+── PUBLIC WEBSITE (frontend/ — http://localhost:3000) ──
+
+/ ..................... Home (Hero + Tool Grid)
+/tool/[slug] .......... Individual Tool Page
+/category/[name] ...... Category Page
+/dashboard ............ User Dashboard
+/history .............. File History
+/login ................ Login Page
+/register ............. Register Page
+/pricing .............. Pricing Plans
+/api .................. API Ready Landing Page ★ NEW
+/api/docs ............. Full API Documentation (interactive) ★ NEW
+/api/playground ....... Live API Playground (test endpoints) ★ NEW
+/api/keys ............. My API Keys (Enterprise users) ★ NEW
+/api/status ........... API Status Page (uptime, latency) ★ NEW
+/blog ................. Blog (SEO)
+/blog/[slug] .......... Blog Post
+/about ................ About Page
+/contact .............. Contact Page
+/privacy .............. Privacy Policy
+/terms ................ Terms of Service
+/sitemap.xml .......... Auto-generated Sitemap
+/robots.txt ........... SEO robots file
+/404 .................. Custom 404 Page
+
+── ADMIN PANEL (admin/ — http://localhost:3001) ──
+
+/admin → redirects to ADMIN_URL (link in footer for admins only)
+
+/login ................ Admin Login (+ 2FA)
+/ ..................... Dashboard Overview
+/users ................ User Management
+/users/[id] ........... User Detail + Edit
+/tools ................ Tool Manager (120 tools)
+/categories ........... Category Manager
+/subscriptions ........ Subscription Manager
+/files ................ Storage Browser
+/jobs ................. Live Job Monitor
+/blog ................. Blog CMS
+/blog/new ............. Create Post
+/blog/[id]/edit ....... Edit Post
+/analytics ............ Analytics + Export
+/ads .................. Ad Manager
+/pricing .............. Pricing Plan Editor
+/emails ............... Email Templates
+/features ............. Feature Flags
+/api-keys ............. Enterprise API Key Manager
+/audit-log ............ Admin Audit Trail
+/notifications ........ Notification Center
+/reports .............. Monthly Reports
+/settings ............. Global Site Settings
+/system ............... System Tools
+/team ................. Team Manager (SUPER_ADMIN)
+
+════════════════════════════════════════
+ PUBLIC API — DEVELOPER READY (v1)
+════════════════════════════════════════
+
+BASE URL: https://toolnest.io/api/v1
+AUTH:     Header → Authorization: Bearer YOUR_API_KEY
+          (Enterprise plan — keys managed at /api/keys)
+
+/api/v1/docs ............ GET — OpenAPI 3.0 JSON spec
+/api/v1/status .......... GET — API health + version
+
+PDF:
+POST /api/v1/pdf/merge
+POST /api/v1/pdf/split
+POST /api/v1/pdf/compress
+
+IMAGE:
+POST /api/v1/image/compress
+POST /api/v1/image/convert
+POST /api/v1/image/resize
+
+VIDEO:
+POST /api/v1/video/info
+POST /api/v1/video/download
+
+AI:
+POST /api/v1/ai/summarize
+POST /api/v1/ai/translate
+
+JOBS:
+GET  /api/v1/jobs/[id]   — poll job status + download URL
+
+API KEY MANAGEMENT (logged-in Enterprise user):
+GET    /api/keys              — list my keys
+POST   /api/keys              — create new key
+DELETE /api/keys/[id]         — revoke key
+GET    /api/keys/[id]/usage   — usage stats this month
+
+API PAGE FEATURES (/api — public developer section):
+✅ Hero — "ToolNest API — 120 Tools, One REST API"
+✅ Code examples — cURL, JavaScript, Python, PHP tabs
+✅ Interactive docs — try endpoint in browser (/api/playground)
+✅ OpenAPI spec download — openapi.json button
+✅ Rate limits table — Free vs Pro vs Enterprise
+✅ Pricing CTA — upgrade to get API key
+✅ Status badge — live green/red from /api/v1/status
+✅ Endpoint list — grouped by category (PDF, Image, Video, AI)
+✅ Copy button — one-click copy code snippet
+✅ Syntax highlight — JetBrains Mono code blocks
+✅ Sidebar nav — sticky section jump on /api/docs
+✅ SDK badges — "Coming soon: npm, pip packages"
+✅ Webhook docs — job complete callback URL setup
+✅ Changelog — API version history section
+
+ADMIN ↔ WEBSITE LINKS:
+✅ Footer link → "Developers" (/api) on public site
+✅ Footer link → "API Docs" (/api/docs) on public site
+✅ Header (admin logged in on frontend) → "Admin Panel" → :3001
+✅ Admin sidebar link → "View Site" → opens :3000 in new tab
+✅ Admin /api-keys page → manages keys shown on user /api/keys
+✅ Admin /settings → toggle "API Public" on/off (maintenance)
+
+════════════════════════════════════════
+ 11 CATEGORIES + 120 TOOLS — COMPLETE
+════════════════════════════════════════
+
+━━━ CATEGORY 1: PDF Tools (15 tools) ━━━
+slug: pdf-tools | icon: 📄 | color: #E8231A
+
+1.  pdf-merge         — Merge Multiple PDFs
+2.  pdf-split         — Split PDF Into Pages  
+3.  pdf-compress      — Compress PDF Size
+4.  pdf-to-word       — PDF to Word (.docx)
+5.  word-to-pdf       — Word to PDF
+6.  pdf-to-excel      — PDF to Excel (.xlsx)
+7.  excel-to-pdf      — Excel to PDF
+8.  pdf-to-ppt        — PDF to PowerPoint
+9.  ppt-to-pdf        — PowerPoint to PDF
+10. pdf-to-jpg        — PDF to JPG Images
+11. jpg-to-pdf        — Images to PDF
+12. pdf-rotate        — Rotate PDF Pages
+13. pdf-watermark     — Add Watermark to PDF
+14. pdf-page-numbers  — Add Page Numbers
+15. pdf-repair        — Repair Corrupted PDF
+
+━━━ CATEGORY 2: Image Tools (15 tools) ━━━
+slug: image-tools | icon: 🖼️ | color: #FF6B35
+
+16. image-compress     — Compress Images (TinyPNG-like)
+17. image-resize       — Resize Image (px/%)
+18. image-crop         — Crop Image (free/ratio)
+19. image-convert      — Convert (JPG/PNG/WEBP/GIF/AVIF)
+20. image-to-pdf       — Images to PDF
+21. bg-remover         — AI Background Remover
+22. image-rotate       — Rotate & Flip Image
+23. image-editor       — Brightness/Contrast/Saturation
+24. bulk-compress      — Bulk Image Compressor
+25. image-watermark    — Add Watermark to Image
+26. screenshot-pdf     — Screenshot to PDF
+27. svg-to-png         — SVG to PNG/JPG
+28. png-to-svg         — PNG to SVG (vectorize)
+29. color-picker       — Image Color Picker (hex/rgb)
+30. photo-enhancer     — AI Photo Enhancer
+
+━━━ CATEGORY 3: Video Downloader (15 tools) ━━━
+slug: video-downloader | icon: 🎬 | color: #FF0000
+
+31. youtube-download   — YouTube Video (MP4 4K/1080p/720p)
+32. youtube-mp3        — YouTube to MP3 Audio
+33. youtube-thumbnail  — YouTube Thumbnail Download
+34. instagram-video    — Instagram Video Download
+35. instagram-reel     — Instagram Reel Download
+36. instagram-photo    — Instagram Photo Download
+37. facebook-video     — Facebook Video Download
+38. tiktok-download    — TikTok (No Watermark)
+39. twitter-video      — Twitter/X Video Download
+40. pinterest-video    — Pinterest Video/GIF Download
+41. reddit-video       — Reddit Video Download
+42. vimeo-download     — Vimeo Video Download
+43. dailymotion-dl     — Dailymotion Download
+44. linkedin-video     — LinkedIn Video Download
+45. twitch-clip        — Twitch Clip Download
+
+━━━ CATEGORY 4: Security Tools (10 tools) ━━━
+slug: security-tools | icon: 🔒 | color: #7B2FF7
+
+46. pdf-protect        — Password Protect PDF
+47. pdf-unlock         — Remove PDF Password
+48. pdf-encrypt        — Encrypt PDF (256-bit AES)
+49. img-metadata       — Remove Image Metadata (EXIF)
+50. pdf-metadata       — Remove PDF Metadata
+51. checksum-gen       — File Checksum (MD5/SHA256)
+52. password-gen       — Secure Password Generator
+53. qr-generator       — QR Code Generator
+54. qr-scanner         — QR Code Scanner/Reader
+55. barcode-gen        — Barcode Generator (all formats)
+
+━━━ CATEGORY 5: Compress & Optimize (10 tools) ━━━
+slug: compress-tools | icon: 📦 | color: #00B4D8
+
+56. pdf-compress       — PDF Compressor (up to 90%)
+57. img-compress       — Image Compressor
+58. bulk-pdf-compress  — Bulk PDF Compressor
+59. bulk-img-compress  — Bulk Image Compressor
+60. video-compress     — Video Compressor (FFmpeg)
+61. gif-compress       — GIF Compressor/Optimizer
+62. zip-creator        — ZIP File Creator
+63. zip-extractor      — ZIP/RAR/7Z Extractor
+64. webp-converter     — Convert to WebP (web optimize)
+65. file-optimizer     — Universal File Optimizer
+
+━━━ CATEGORY 6: Text & OCR Tools (10 tools) ━━━
+slug: text-ocr-tools | icon: 📝 | color: #06D6A0
+
+66. image-to-text      — Image to Text (OCR - 100 langs)
+67. pdf-to-text        — PDF to Text Extractor
+68. scanned-pdf        — Scanned PDF → Searchable PDF
+69. handwriting-ocr    — Handwriting to Text (AI)
+70. text-to-pdf        — Text/HTML to PDF
+71. text-to-speech     — Text to Speech (MP3)
+72. speech-to-text     — Speech/Audio to Text
+73. word-counter       — Word + Character Counter
+74. text-diff          — Text Difference Checker
+75. text-translate     — AI Document Translator (100 langs)
+
+━━━ CATEGORY 7: Design Tools (10 tools) ━━━
+slug: design-tools | icon: 🎨 | color: #F72585
+
+76. color-palette      — AI Color Palette Generator
+77. gradient-gen       — CSS Gradient Generator
+78. font-pairing       — AI Font Pairing Suggester
+79. logo-maker         — AI Logo Maker
+80. banner-maker       — Banner/Ad Maker
+81. social-post-maker  — Social Media Post Maker
+82. yt-thumbnail-maker — YouTube Thumbnail Maker
+83. business-card      — Business Card Maker (PDF)
+84. resume-maker       — AI Resume/CV Maker (PDF)
+85. favicon-gen        — Favicon Generator (all sizes)
+
+━━━ CATEGORY 8: Office Tools (10 tools) ━━━
+slug: office-tools | icon: 📊 | color: #FB8500
+
+86. word-to-pdf-2      — Word to PDF (advanced)
+87. excel-to-pdf-2     — Excel to PDF (advanced)
+88. ppt-to-pdf-2       — PPT to PDF (advanced)
+89. pdf-to-word-2      — PDF to Word (advanced)
+90. pdf-to-excel-2     — PDF to Excel (tables)
+91. csv-to-excel       — CSV to Excel
+92. excel-to-csv       — Excel to CSV
+93. markdown-to-pdf    — Markdown to PDF
+94. html-to-pdf        — HTML to PDF (Puppeteer)
+95. txt-to-pdf         — TXT to PDF
+
+━━━ CATEGORY 9: Merge & Split (8 tools) ━━━
+slug: merge-split | icon: 🔗 | color: #4CC9F0
+
+96.  pdf-merge-2       — PDF Merger (drag reorder)
+97.  pdf-split-2       — PDF Splitter (range select)
+98.  image-merger      — Image Merger (vertical/horizontal)
+99.  video-merger      — Video Merger (FFmpeg)
+100. audio-merger      — Audio Merger/Joiner
+101. pdf-extract       — Extract PDF Pages
+102. pdf-delete-pages  — Delete PDF Pages
+103. pdf-reorder       — Drag & Drop Page Reorder
+
+━━━ CATEGORY 10: Social Media Tools (7 tools) ━━━
+slug: social-tools | icon: 📱 | color: #FF006E
+
+104. story-maker       — Instagram Story Maker
+105. yt-thumbnail      — YouTube Thumbnail Creator
+106. twitter-header    — Twitter/X Header Maker
+107. fb-cover          — Facebook Cover Maker
+108. linkedin-banner   — LinkedIn Banner Maker
+109. social-resizer    — Social Media Image Resizer
+110. hashtag-gen       — AI Hashtag Generator
+
+━━━ CATEGORY 11: AI Tools (10 tools) ━━━
+slug: ai-tools | icon: 🤖 | color: #7B2FF7
+
+111. ai-pdf-summary    — AI PDF Summarizer
+112. ai-img-describe   — AI Image Describer
+113. ai-rewriter       — AI Text Rewriter
+114. ai-grammar        — AI Grammar & Spell Checker
+115. ai-translate      — AI Document Translator
+116. ai-bg-remove      — AI Background Remover (advanced)
+117. ai-enhancer       — AI Photo Enhancer (4x upscale)
+118. ai-resume         — AI Resume Reviewer & Scorer
+119. ai-content        — AI Content Generator
+120. ai-chatbot        — AI Assistant Chatbot (Claude)
+
+════════════════════════════════════════
+ ULTRA PRO FEATURES
+════════════════════════════════════════
+
+FILE HANDLING:
+✅ Drag & Drop upload (multi-file)
+✅ Paste from clipboard (Ctrl+V)
+✅ Upload from URL
+✅ Google Drive import
+✅ Dropbox import
+✅ Max file size: 500MB (free) / 2GB (pro)
+✅ Auto-delete files after 2 hours
+✅ AES-256 encrypted storage
+✅ Progress bar (polling — GET /api/jobs/:id)
+✅ Cancel upload anytime
+
+USER SYSTEM:
+✅ NextAuth.js (email/password + Google OAuth)
+✅ User roles: USER | MODERATOR | ADMIN | SUPER_ADMIN (Prisma enum)
+✅ User dashboard
+✅ File history (last 50 files — Prisma)
+✅ Download history
+✅ Usage statistics
+✅ Profile settings
+✅ Admin panel (admin/ folder) — full site control
+
+PRICING PLANS:
+FREE:
+- 5 tools/day
+- Max 50MB file size
+- No history saved
+- Ads shown
+
+PRO ($9.99/month):
+- Unlimited tools
+- Max 500MB file size
+- 30-day history
+- No ads
+- Priority processing
+
+ENTERPRISE ($29.99/month):
+- Everything in Pro
+- Max 2GB file size
+- API access
+- Team accounts (5 users)
+- Dedicated support
+
+MONETIZATION:
+✅ Google AdSense (banner + sidebar)
+✅ Pro subscription (Stripe)
+✅ API access (pay per use)
+✅ Affiliate links
+
+SEO FEATURES:
+✅ Auto-generated meta tags per tool
+✅ JSON-LD structured data
+✅ OpenGraph + Twitter cards
+✅ Auto sitemap.xml generation
+✅ robots.txt
+✅ Canonical URLs
+✅ Blog section (markdown-based)
+✅ Google Analytics 4
+✅ Google Search Console ready
+✅ Core Web Vitals optimized
+✅ Lighthouse score 95+
+
+PERFORMANCE (FRONTEND):
+✅ next/image — WebP/AVIF auto, blur placeholder
+✅ next/dynamic — lazy load PDF viewer, AI chat, heavy modals
+✅ Code splitting per tool page (dynamic import)
+✅ Virtual scroll for 120-tool grid (@tanstack/react-virtual)
+✅ TanStack Query staleTime — cache tool metadata 5 min
+✅ Prefetch tool pages on card hover (router.prefetch)
+✅ Font subsetting via next/font (Latin only)
+✅ Bundle analyzer (@next/bundle-analyzer) in CI
+✅ Lighthouse score 95+ (Performance, Accessibility, SEO)
+✅ Core Web Vitals: LCP < 2.5s, CLS < 0.1, INP < 200ms
+✅ ISR for blog + static tool metadata pages
+✅ Edge-ready metadata generation (generateMetadata)
+
+SECURITY:
+✅ HTTPS everywhere (SSL)
+✅ CORS properly configured
+✅ Rate limiting (10 req/min free)
+✅ File type validation (strict)
+✅ Malware scan on upload
+✅ IP blacklisting
+✅ DDoS protection (Cloudflare)
+✅ GDPR compliant
+✅ Cookie consent banner
+
+════════════════════════════════════════
+ API ROUTES
+ frontend/app/api/  → public + user APIs
+ admin/app/api/admin/  → ALL admin APIs (one gateway)
+════════════════════════════════════════
+
+AUTH (NextAuth):
+GET/POST /api/auth/[...nextauth]
+
+PDF:
+POST   /api/pdf/merge
+POST   /api/pdf/split
+POST   /api/pdf/compress
+POST   /api/pdf/to-word
+POST   /api/pdf/to-excel
+POST   /api/pdf/to-image
+POST   /api/pdf/protect
+POST   /api/pdf/unlock
+POST   /api/pdf/watermark
+POST   /api/pdf/rotate
+POST   /api/pdf/repair
+
+IMAGE:
+POST   /api/image/compress
+POST   /api/image/resize
+POST   /api/image/crop
+POST   /api/image/convert
+POST   /api/image/bg-remove
+POST   /api/image/enhance
+POST   /api/image/watermark
+POST   /api/image/to-pdf
+
+VIDEO:
+POST   /api/video/info
+POST   /api/video/download
+GET    /api/video/progress/[jobId]
+POST   /api/video/formats
+
+OCR:
+POST   /api/ocr/image-to-text
+POST   /api/ocr/pdf-to-text
+POST   /api/ocr/handwriting
+
+AI:
+POST   /api/ai/summarize
+POST   /api/ai/describe-image
+POST   /api/ai/rewrite
+POST   /api/ai/grammar-check
+POST   /api/ai/translate
+POST   /api/ai/resume-review
+POST   /api/ai/generate-content
+POST   /api/ai/chat
+
+USER:
+GET    /api/user/history
+GET    /api/user/stats
+DELETE /api/user/history/[id]
+PUT    /api/user/profile
+
+PAYMENT:
+POST   /api/payment/create-checkout
+POST   /api/payment/webhook
+GET    /api/payment/subscription
+
+JOBS (shared progress polling):
+GET    /api/jobs/[id]
+
+PUBLIC REST API v1 (Enterprise — Bearer token):
+GET    /api/v1/docs                  (OpenAPI JSON spec)
+GET    /api/v1/status                (health check)
+POST   /api/v1/pdf/merge             (+ split, compress)
+POST   /api/v1/image/compress        (+ convert, resize)
+POST   /api/v1/video/info            (+ download)
+POST   /api/v1/ai/summarize          (+ translate)
+GET    /api/v1/jobs/[id]
+
+API KEYS (logged-in Enterprise user):
+GET    /api/keys
+POST   /api/keys
+DELETE /api/keys/[id]
+GET    /api/keys/[id]/usage
+
+ADMIN API (all under admin/app/api/admin/ — ONE control gateway):
+
+CORE:
+GET    /api/admin/stats              (?range=7d|30d|90d)
+GET    /api/admin/activity           (recent admin actions feed)
+GET    /api/admin/search             (?q= — global search)
+
+USERS:
+GET    /api/admin/users              (?page&search&role&status)
+GET    /api/admin/users/[id]
+PATCH  /api/admin/users/[id]         (ban, role, plan)
+DELETE /api/admin/users/[id]
+POST   /api/admin/users/bulk         (bulk ban/delete)
+POST   /api/admin/users/[id]/impersonate  (SUPER_ADMIN only)
+
+TOOLS & CATEGORIES:
+GET    /api/admin/tools
+PATCH  /api/admin/tools/[slug]       (enable, meta, SEO)
+PATCH  /api/admin/tools/reorder      (drag order save)
+PATCH  /api/admin/tools/bulk         (bulk enable/disable)
+GET    /api/admin/categories
+PATCH  /api/admin/categories/[slug]
+PATCH  /api/admin/categories/reorder
+
+SUBSCRIPTIONS & PAYMENTS:
+GET    /api/admin/subscriptions
+PATCH  /api/admin/subscriptions/[id] (cancel, refund, extend)
+GET    /api/admin/revenue            (MRR, chart data)
+
+FILES & JOBS:
+GET    /api/admin/files              (?page&type&size)
+DELETE /api/admin/files/[id]
+POST   /api/admin/files/bulk-delete
+GET    /api/admin/jobs               (?status=pending|running|done|failed)
+DELETE /api/admin/jobs/[id]
+POST   /api/admin/jobs/[id]/retry
+POST   /api/admin/jobs/[id]/cancel
+GET    /api/admin/storage            (disk usage tree)
+
+BLOG:
+GET    /api/admin/blog               (?status=draft|published)
+POST   /api/admin/blog
+PATCH  /api/admin/blog/[id]
+DELETE /api/admin/blog/[id]
+GET    /api/admin/blog/[id]/preview
+
+ANALYTICS & REPORTS:
+GET    /api/admin/analytics          (?range&metric)
+GET    /api/admin/analytics/export   (CSV download)
+POST   /api/admin/reports/generate   (PDF/CSV monthly report)
+
+MONETIZATION:
+GET    /api/admin/ads
+PATCH  /api/admin/ads/[zone]
+GET    /api/admin/pricing
+PATCH  /api/admin/pricing/[plan]
+
+CONFIG:
+GET    /api/admin/settings
+PATCH  /api/admin/settings
+GET    /api/admin/features
+PATCH  /api/admin/features/[key]
+GET    /api/admin/emails
+PATCH  /api/admin/emails/[template]
+GET    /api/admin/api-keys
+POST   /api/admin/api-keys
+DELETE /api/admin/api-keys/[id]
+
+SECURITY & TEAM:
+GET    /api/admin/audit-log          (?page&admin&action)
+GET    /api/admin/notifications
+POST   /api/admin/notifications      (send blast)
+PATCH  /api/admin/notifications/[id]/read
+GET    /api/admin/team
+POST   /api/admin/team               (add MODERATOR)
+DELETE /api/admin/team/[id]
+
+SYSTEM:
+POST   /api/admin/system/cleanup
+GET    /api/admin/system/logs
+GET    /api/admin/system/health      (DB, disk, API status)
+POST   /api/admin/system/maintenance (toggle + message)
+
+════════════════════════════════════════
+ FOLDER STRUCTURE — COMPLETE
+════════════════════════════════════════
+
+toolnest/
+├── 📁 shared/                      (ONE PLACE — both apps use this)
+│   ├── prisma/
+│   │   └── schema.prisma           (User, FileHistory, Subscription,
+│   │                                ToolConfig, SiteSettings, BlogPost,
+│   │                                AuditLog, FeatureFlag, ApiKey,
+│   │                                AdminNotification, EmailTemplate)
+│   ├── lib/
+│   │   └── db.ts                   (Prisma client singleton)
+│   ├── constants/
+│   │   ├── tools.ts                (120 tool definitions — single source)
+│   │   └── categories.ts           (11 categories)
+│   ├── types/
+│   │   └── index.ts
+│   └── validators/
+│       ├── auth.ts
+│       ├── upload.ts
+│       └── admin.ts
+│
+├── 📁 frontend/                    (Public site — port 3000)
+│   ├── app/
+│   │   ├── (auth)/
+│   │   │   ├── login/page.tsx
+│   │   │   └── register/page.tsx
+│   │   ├── (main)/
+│   │   │   ├── layout.tsx         (main shell + providers)
+│   │   │   ├── page.tsx           (Home)
+│   │   │   ├── loading.tsx
+│   │   │   ├── tool/[slug]/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── loading.tsx
+│   │   │   │   └── error.tsx
+│   │   │   ├── category/[name]/
+│   │   │   │   └── page.tsx
+│   │   │   ├── dashboard/page.tsx
+│   │   │   ├── history/page.tsx
+│   │   │   ├── pricing/page.tsx
+│   │   │   └── api/               (Developer pages → URL /api/*)
+│   │   │       ├── page.tsx       (/api — API Ready landing)
+│   │   │       ├── docs/page.tsx  (/api/docs)
+│   │   │       ├── playground/page.tsx
+│   │   │       ├── keys/page.tsx  (/api/keys — Enterprise)
+│   │   │       └── status/page.tsx
+│   │   ├── blog/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/page.tsx
+│   │   ├── api/                   (public + user + v1 REST APIs)
+│   │   │   ├── auth/[...nextauth]/
+│   │   │   ├── v1/                (Enterprise REST API ★ NEW)
+│   │   │   │   ├── docs/route.ts  (OpenAPI JSON)
+│   │   │   │   ├── status/route.ts
+│   │   │   │   ├── pdf/
+│   │   │   │   ├── image/
+│   │   │   │   ├── video/
+│   │   │   │   ├── ai/
+│   │   │   │   └── jobs/[id]/
+│   │   │   ├── keys/              (user API key CRUD ★ NEW)
+│   │   │   ├── pdf/
+│   │   │   ├── image/
+│   │   │   ├── video/
+│   │   │   ├── ocr/
+│   │   │   ├── ai/
+│   │   │   ├── user/
+│   │   │   ├── payment/
+│   │   │   └── jobs/[id]/
+│   │   ├── og/[slug]/route.tsx
+│   │   ├── layout.tsx
+│   │   ├── globals.css
+│   │   ├── providers.tsx
+│   │   └── not-found.tsx
+│   ├── components/                 (public UI)
+│   │   ├── layout/
+│   │   ├── home/
+│   │   ├── tool/
+│   │   ├── api/                   (API docs UI ★ NEW)
+│   │   │   ├── ApiHero.tsx
+│   │   │   ├── ApiEndpointList.tsx
+│   │   │   ├── CodeExampleTabs.tsx  (cURL, JS, Python, PHP)
+│   │   │   ├── ApiPlayground.tsx    (live request tester)
+│   │   │   ├── ApiKeyManager.tsx    (/api/keys page)
+│   │   │   ├── ApiStatusBadge.tsx   (live green/red)
+│   │   │   ├── RateLimitTable.tsx
+│   │   │   ├── DocsSidebar.tsx      (sticky nav)
+│   │   │   └── CopyCodeButton.tsx
+│   │   ├── command/
+│   │   ├── ui/
+│   │   └── shared/
+│   │       └── AdminPanelLink.tsx   (shows if user role=ADMIN)
+│   ├── lib/
+│   │   ├── search.ts
+│   │   ├── api.ts
+│   │   ├── openapi.ts             (OpenAPI spec generator ★ NEW)
+│   │   ├── api-auth.ts            (Bearer token validator ★ NEW)
+│   │   ├── auth.ts
+│   │   ├── storage.ts
+│   │   ├── rate-limit.ts
+│   │   ├── processors/           (pdf, image, video, ocr)
+│   │   └── utils.ts
+│   ├── scripts/
+│   │   ├── cleanup.ts
+│   │   └── downloader.py
+│   ├── hooks/
+│   ├── store/
+│   └── public/
+│
+├── 📁 admin/                       (Admin panel — port 3001, PRO MAX)
+│   ├── app/
+│   │   ├── login/
+│   │   │   ├── page.tsx           (email + password)
+│   │   │   └── 2fa/page.tsx       (TOTP verify step)
+│   │   ├── (dashboard)/
+│   │   │   ├── layout.tsx         (AdminShell + sidebar + header)
+│   │   │   ├── page.tsx           (stats + charts + activity feed)
+│   │   │   ├── loading.tsx
+│   │   │   ├── users/
+│   │   │   │   ├── page.tsx       (table + bulk actions)
+│   │   │   │   └── [id]/page.tsx  (detail + impersonate btn)
+│   │   │   ├── tools/page.tsx     (drag-reorder + bulk toggle)
+│   │   │   ├── categories/page.tsx
+│   │   │   ├── subscriptions/page.tsx
+│   │   │   ├── files/page.tsx     (storage browser)
+│   │   │   ├── jobs/page.tsx      (live monitor + retry/cancel)
+│   │   │   ├── blog/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── new/page.tsx
+│   │   │   │   └── [id]/edit/page.tsx
+│   │   │   ├── analytics/page.tsx (charts + date range + export)
+│   │   │   ├── ads/page.tsx
+│   │   │   ├── pricing/page.tsx
+│   │   │   ├── emails/page.tsx
+│   │   │   ├── features/page.tsx  (feature flags toggles)
+│   │   │   ├── api-keys/page.tsx
+│   │   │   ├── audit-log/page.tsx
+│   │   │   ├── notifications/page.tsx
+│   │   │   ├── reports/page.tsx
+│   │   │   ├── settings/page.tsx
+│   │   │   ├── system/page.tsx
+│   │   │   └── team/page.tsx      (SUPER_ADMIN only)
+│   │   ├── api/admin/             (ALL admin APIs — see API section)
+│   │   │   ├── stats/route.ts
+│   │   │   ├── activity/route.ts
+│   │   │   ├── search/route.ts
+│   │   │   ├── users/
+│   │   │   ├── tools/
+│   │   │   ├── categories/
+│   │   │   ├── subscriptions/
+│   │   │   ├── revenue/route.ts
+│   │   │   ├── files/
+│   │   │   ├── jobs/
+│   │   │   ├── storage/route.ts
+│   │   │   ├── blog/
+│   │   │   ├── analytics/
+│   │   │   ├── reports/
+│   │   │   ├── ads/
+│   │   │   ├── pricing/
+│   │   │   ├── emails/
+│   │   │   ├── features/
+│   │   │   ├── api-keys/
+│   │   │   ├── audit-log/route.ts
+│   │   │   ├── notifications/
+│   │   │   ├── team/
+│   │   │   ├── settings/route.ts
+│   │   │   └── system/
+│   │   ├── layout.tsx
+│   │   ├── globals.css            (admin pro theme — slate sidebar)
+│   │   └── providers.tsx          (Theme, Query, Session, Toaster)
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── AdminSidebar.tsx   (collapsible nav — all sections)
+│   │   │   ├── AdminHeader.tsx    (search, notifications, profile)
+│   │   │   ├── AdminShell.tsx
+│   │   │   ├── AdminBreadcrumb.tsx
+│   │   │   └── AdminCommandMenu.tsx (⌘K jump to section)
+│   │   ├── dashboard/
+│   │   │   ├── StatsCards.tsx     (4 KPI cards + trend arrows)
+│   │   │   ├── UsageChart.tsx     (Recharts area chart)
+│   │   │   ├── RevenueChart.tsx   (MRR line chart)
+│   │   │   ├── TopToolsChart.tsx  (horizontal bar chart)
+│   │   │   ├── StorageGauge.tsx   (disk usage ring)
+│   │   │   ├── ActivityFeed.tsx   (last 20 admin actions)
+│   │   │   └── QuickActions.tsx   (cleanup, maintenance, export)
+│   │   ├── tables/
+│   │   │   ├── DataTable.tsx      (TanStack Table base)
+│   │   │   ├── UsersTable.tsx     (bulk select + export CSV)
+│   │   │   ├── FilesTable.tsx
+│   │   │   ├── JobsTable.tsx      (status badges + retry btn)
+│   │   │   ├── AuditLogTable.tsx
+│   │   │   └── BulkActionBar.tsx  (appears on multi-select)
+│   │   ├── forms/
+│   │   │   ├── ToolEditForm.tsx
+│   │   │   ├── CategoryForm.tsx
+│   │   │   ├── SettingsForm.tsx
+│   │   │   ├── PricingForm.tsx
+│   │   │   ├── AdZoneForm.tsx
+│   │   │   ├── EmailTemplateForm.tsx
+│   │   │   ├── FeatureFlagToggle.tsx
+│   │   │   └── ConfirmDialog.tsx  (type-to-confirm destructive)
+│   │   ├── editors/
+│   │   │   └── TipTapEditor.tsx   (rich blog editor)
+│   │   ├── charts/
+│   │   │   ├── DateRangePicker.tsx
+│   │   │   └── ExportButton.tsx   (CSV / PDF download)
+│   │   └── ui/                    (shadcn/ui — admin dark theme)
+│   ├── lib/
+│   │   ├── auth.ts                (role check helpers)
+│   │   ├── api.ts                 (admin fetch + query keys)
+│   │   ├── audit.ts               (logAdminAction helper)
+│   │   ├── permissions.ts         (role → permission map)
+│   │   └── export.ts              (CSV/PDF generate helpers)
+│   ├── middleware.ts              (role guard + IP whitelist)
+│   └── hooks/
+│       ├── useAdminStats.ts
+│       ├── useAdminPermissions.ts
+│       └── useAuditLog.ts
+│
+├── 📁 uploads/                    (shared storage — both apps)
+├── 📁 temp/
+│
+├── docker-compose.yml
+├── .env.example
+└── README.md
+
+════════════════════════════════════════
+ ENVIRONMENT VARIABLES (.env)
+════════════════════════════════════════
+
+# App
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_ADMIN_URL=http://localhost:3001
+NEXT_PUBLIC_APP_NAME=ToolNest
+NODE_ENV=development
+
+# Database (Prisma — shared/ folder, used by frontend + admin)
+DATABASE_URL=file:../shared/prisma/dev.db       # SQLite local
+# DATABASE_URL=postgresql://user:pass@localhost:5432/toolnest  # prod
+
+# Auth — Frontend (NextAuth)
+NEXTAUTH_SECRET=your-secret-key
+NEXTAUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your-google-id
+GOOGLE_CLIENT_SECRET=your-google-secret
+
+# Auth — Admin (separate NextAuth instance)
+ADMIN_NEXTAUTH_SECRET=your-admin-secret
+ADMIN_NEXTAUTH_URL=http://localhost:3001
+ADMIN_EMAIL=admin@toolnest.io              # seed first SUPER_ADMIN
+ADMIN_IP_WHITELIST=127.0.0.1,::1          # comma-separated (empty = allow all)
+ADMIN_SESSION_TIMEOUT_MIN=60               # auto logout after 60 min
+ADMIN_2FA_ENABLED=false                    # set true to require TOTP
+
+# AI
+ANTHROPIC_API_KEY=your-claude-api-key
+
+# Storage (local — no R2 needed to start)
+UPLOAD_DIR=./uploads
+TEMP_DIR=./temp
+MAX_FILE_SIZE_MB=50
+
+# Payment (Stripe — optional for MVP)
+STRIPE_SECRET_KEY=your-stripe-key
+STRIPE_WEBHOOK_SECRET=your-webhook-secret
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your-public-key
+
+# Analytics (optional)
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_ADSENSE_ID=ca-pub-XXXXXXXX
+
+# Frontend (optional)
+NEXT_PUBLIC_ENABLE_PWA=true
+NEXT_PUBLIC_ENABLE_COMMAND_PALETTE=true
+NEXT_PUBLIC_ADMIN_URL=http://localhost:3001
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api/v1
+API_RATE_LIMIT_FREE=10               # requests/min (free tier)
+API_RATE_LIMIT_PRO=100
+API_RATE_LIMIT_ENTERPRISE=1000
+
+════════════════════════════════════════
+ DOCKER COMPOSE — SIMPLE (optional)
+════════════════════════════════════════
+
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    ports: ["3000:3000"]
+    environment:
+      - DATABASE_URL=postgresql://toolnest:toolnest@db:5432/toolnest
+    volumes:
+      - ./uploads:/app/uploads
+      - ./temp:/app/temp
+      - ./shared:/app/shared
+    depends_on: [db]
+
+  admin:
+    build: ./admin
+    ports: ["3001:3001"]
+    environment:
+      - DATABASE_URL=postgresql://toolnest:toolnest@db:5432/toolnest
+    volumes:
+      - ./uploads:/app/uploads
+      - ./shared:/app/shared
+    depends_on: [db]
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: toolnest
+      POSTGRES_PASSWORD: toolnest
+      POSTGRES_DB: toolnest
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    ports: ["5432:5432"]
+
+volumes:
+  pg-data:
+
+# Local dev:
+#   cd shared && npx prisma migrate dev
+#   cd frontend && npm run dev   → :3000
+#   cd admin && npm run dev      → :3001
+
+════════════════════════════════════════
+ BUILD ORDER — FILE BY FILE
+════════════════════════════════════════
+
+Generate in EXACTLY this order,
+each file 100% complete:
+
+PHASE 1 — SHARED (ONE DATABASE + CONSTANTS):
+1.  shared/prisma/schema.prisma
+2.  shared/lib/db.ts
+3.  shared/constants/tools.ts       (ALL 120 tools)
+4.  shared/constants/categories.ts
+5.  shared/types/index.ts
+6.  shared/validators/auth.ts
+7.  shared/validators/upload.ts
+8.  shared/validators/admin.ts
+
+PHASE 2 — FRONTEND CORE LIB + PROCESSORS:
+9.  frontend/lib/storage.ts
+10. frontend/lib/rate-limit.ts
+11. frontend/lib/processors/pdf.ts
+12. frontend/lib/processors/image.ts
+13. frontend/lib/processors/video.ts
+14. frontend/scripts/downloader.py
+15. frontend/scripts/cleanup.ts
+
+PHASE 3 — FRONTEND API ROUTES:
+16. frontend/app/api/auth/[...nextauth]/route.ts
+17. frontend/app/api/pdf/merge/route.ts      (+ other pdf routes)
+18. frontend/app/api/image/compress/route.ts (+ other image routes)
+19. frontend/app/api/video/download/route.ts (+ other video routes)
+20. frontend/app/api/ocr/image-to-text/route.ts
+21. frontend/app/api/ai/summarize/route.ts   (+ other ai routes)
+22. frontend/app/api/user/history/route.ts
+23. frontend/app/api/payment/create-checkout/route.ts
+24. frontend/app/api/jobs/[id]/route.ts
+25. frontend/app/api/v1/docs/route.ts         (OpenAPI spec ★ NEW)
+26. frontend/app/api/v1/status/route.ts       ★ NEW
+27. frontend/app/api/v1/pdf/merge/route.ts    (+ other v1 routes) ★ NEW
+28. frontend/app/api/keys/route.ts            (+ [id]/usage) ★ NEW
+29. frontend/lib/openapi.ts                   ★ NEW
+30. frontend/lib/api-auth.ts                 (Bearer token check) ★ NEW
+
+PHASE 4 — API PAGES (public developer section):
+31. frontend/components/api/ApiHero.tsx
+32. frontend/components/api/CodeExampleTabs.tsx
+33. frontend/components/api/ApiEndpointList.tsx
+34. frontend/components/api/ApiPlayground.tsx
+35. frontend/components/api/ApiKeyManager.tsx
+36. frontend/components/api/DocsSidebar.tsx
+37. frontend/app/(main)/api/page.tsx         (/api landing)
+38. frontend/app/(main)/api/docs/page.tsx
+39. frontend/app/(main)/api/playground/page.tsx
+40. frontend/app/(main)/api/keys/page.tsx
+41. frontend/app/(main)/api/status/page.tsx
+42. frontend/components/shared/AdminPanelLink.tsx
+
+PHASE 5 — ADMIN CORE + API:
+43. admin/middleware.ts
+44. admin/lib/auth.ts
+45. admin/lib/permissions.ts
+46. admin/lib/audit.ts
+47. admin/lib/api.ts
+48. admin/lib/export.ts
+49. admin/app/api/admin/stats/route.ts
+50. admin/app/api/admin/activity/route.ts
+51. admin/app/api/admin/users/route.ts
+52. admin/app/api/admin/tools/route.ts
+53. admin/app/api/admin/api-keys/route.ts
+54. admin/app/api/admin/settings/route.ts
+55. admin/app/api/admin/system/health/route.ts
+
+PHASE 6 — ADMIN UI (all admin pages):
+56. admin/app/layout.tsx
+57. admin/app/providers.tsx
+58. admin/app/globals.css
+59. admin/components/layout/AdminSidebar.tsx
+60. admin/components/layout/AdminHeader.tsx
+61. admin/components/layout/AdminShell.tsx
+62. admin/components/dashboard/StatsCards.tsx
+63. admin/components/dashboard/ActivityFeed.tsx
+64. admin/components/tables/DataTable.tsx
+65. admin/components/editors/TipTapEditor.tsx
+66. admin/app/login/page.tsx
+67. admin/app/(dashboard)/layout.tsx
+68. admin/app/(dashboard)/page.tsx
+69. admin/app/(dashboard)/users/page.tsx
+70. admin/app/(dashboard)/users/[id]/page.tsx
+71. admin/app/(dashboard)/tools/page.tsx
+72. admin/app/(dashboard)/categories/page.tsx
+73. admin/app/(dashboard)/subscriptions/page.tsx
+74. admin/app/(dashboard)/files/page.tsx
+75. admin/app/(dashboard)/jobs/page.tsx
+76. admin/app/(dashboard)/blog/page.tsx
+77. admin/app/(dashboard)/blog/new/page.tsx
+78. admin/app/(dashboard)/analytics/page.tsx
+79. admin/app/(dashboard)/ads/page.tsx
+80. admin/app/(dashboard)/pricing/page.tsx
+81. admin/app/(dashboard)/emails/page.tsx
+82. admin/app/(dashboard)/features/page.tsx
+83. admin/app/(dashboard)/api-keys/page.tsx
+84. admin/app/(dashboard)/audit-log/page.tsx
+85. admin/app/(dashboard)/notifications/page.tsx
+86. admin/app/(dashboard)/reports/page.tsx
+87. admin/app/(dashboard)/settings/page.tsx
+88. admin/app/(dashboard)/system/page.tsx
+89. admin/app/(dashboard)/team/page.tsx
+
+PHASE 7 — FRONTEND UI + PAGES:
+90. frontend/app/layout.tsx
+91. frontend/app/providers.tsx
+92. frontend/app/globals.css
+93. frontend/lib/search.ts
+94. frontend/components/layout/Header.tsx      (+ Developers + Admin link)
+95. frontend/components/layout/Footer.tsx      (+ API Docs link)
+96. frontend/components/home/ToolGrid.tsx
+97. frontend/components/tool/UploadZone.tsx
+98. frontend/app/(main)/layout.tsx
+99. frontend/app/page.tsx
+100. frontend/app/tool/[slug]/page.tsx
+101. frontend/app/not-found.tsx
+
+PHASE 8 — DEVOPS:
+102. docker-compose.yml
+103. .env.example
+104. README.md
+
+════════════════════════════════════════
+ FINAL INSTRUCTIONS
+════════════════════════════════════════
+
+RULES — MUST FOLLOW:
+✅ Every file 100% complete — no TODOs
+✅ TypeScript strict mode everywhere  
+✅ Error handling in every function
+✅ Loading states for every action
+✅ Mobile responsive (320px to 4K)
+✅ Accessibility (ARIA labels, keyboard nav)
+✅ Console.log removed in production
+✅ All 120 tools must be functional
+✅ Video download must work (yt-dlp)
+✅ AI features use Claude API
+✅ File cleanup runs every 1 hour
+✅ Rate limiting on all routes
+✅ Input validation everywhere
+
+✅ Keyboard shortcuts work globally (⌘K, /, Esc)
+✅ Command palette finds any of 120 tools in <100ms
+✅ Favorites + Recent tools persist after refresh
+✅ Dark/light theme persists (next-themes)
+✅ Every route has loading.tsx or Suspense fallback
+✅ Mobile bottom nav + sticky action bar on tool pages
+✅ Before/After preview on image tools
+✅ Virtual scroll handles 120 tools without lag
+
+✅ Admin panel runs on port 3001 — separate from public site
+✅ Role hierarchy enforced: SUPER_ADMIN > ADMIN > MODERATOR
+✅ Every admin action logged to AuditLog table
+✅ Bulk actions + CSV export work on all data tables
+✅ Maintenance mode toggle reflects on frontend within 30s
+✅ Feature flags control site features without redeploy
+✅ TipTap blog editor supports draft/publish + preview
+✅ Dashboard stats auto-refresh every 30 seconds
+✅ Destructive actions require ConfirmDialog type-to-confirm
+✅ Admin ⌘K command palette jumps to any section instantly
+✅ /api page live with code examples + OpenAPI spec download
+✅ /api/playground can test endpoints with API key
+✅ /api/keys page lets Enterprise users create/revoke keys
+✅ Admin /api-keys page controls same keys as user /api/keys
+✅ Footer has "Developers" + "API Docs" links on every page
+✅ Admin users see "Admin Panel" link in header → :3001
+
+START NOW. Begin with Phase 1.
+File 1: shared/prisma/schema.prisma
+Write the complete file. Then continue.
+Do not stop until all 104 files are done.

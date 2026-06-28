@@ -1,0 +1,97 @@
+/* Admin panel light mode overrides (html without .dark class) */
+html:not(.dark) .admin-panel {
+  color: #0f172a;
+}
+
+html:not(.dark) .admin-panel .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) .admin-panel .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .admin-panel .bg-slate-900\/80 {
+  background-color: rgb(255 255 255 / 0.85) !important;
+}
+
+html:not(.dark) .admin-panel .bg-slate-800 {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) .admin-panel .bg-slate-800\/50 {
+  background-color: rgb(241 245 249 / 0.8) !important;
+}
+
+html:not(.dark) .admin-panel .border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .admin-panel .border-slate-800\/50 {
+  border-color: rgb(226 232 240 / 0.8) !important;
+}
+
+html:not(.dark) .admin-panel .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .admin-panel .text-slate-200 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .admin-panel .text-slate-300 {
+  color: #475569 !important;
+}
+
+html:not(.dark) .admin-panel .text-slate-400 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .admin-panel .text-slate-500 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .admin-panel .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) .admin-panel .placeholder\:text-slate-600::placeholder {
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) .admin-panel .hover\:bg-slate-800:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) .admin-panel .hover\:bg-slate-800\/50:hover {
+  background-color: rgb(241 245 249 / 0.8) !important;
+}
+
+html:not(.dark) .admin-panel .hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .admin-panel .admin-sidebar .bg-\[\#E8231A\] {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .admin-panel .admin-theme-toggle {
+  border-color: #e2e8f0 !important;
+  background-color: #ffffff !important;
+  color: #64748b !important;
+}
+
+html:not(.dark) .admin-panel .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .admin-panel .bg-slate-700,
+html:not(.dark) .admin-panel .hover\:bg-slate-700:hover {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .admin-panel input,
+html:not(.dark) .admin-panel textarea,
+html:not(.dark) .admin-panel select {
+  color: #0f172a !important;
+}
