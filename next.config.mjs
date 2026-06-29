@@ -3,6 +3,7 @@ import { toolSlugRedirects } from "./lib/data/tool-redirects.mjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  serverExternalPackages: ["@napi-rs/canvas", "@pdfsmaller/pdf-encrypt"],
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
