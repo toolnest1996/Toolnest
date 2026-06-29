@@ -59,14 +59,6 @@ const ImageCompress = lazy(() =>
   })),
 );
 
-const SvgToPng = lazy(() =>
-  import("./image-studio").then((m) => ({
-    default: function SvgToPngTool() {
-      return <m.ImageStudio accept=".svg,image/svg+xml" defaultFormat="image/png" />;
-    },
-  })),
-);
-
 const SocialResizer = lazy(() =>
   import("./image-studio").then((m) => ({
     default: function SocialResizerTool() {
@@ -104,8 +96,10 @@ const TOOL_MAP: Record<string, ComponentType> = {
   "pdf-split": lazy(() => import("./pdf-split").then((m) => ({ default: m.PdfSplit }))),
   "pdf-compress": lazy(() => import("./pdf-compress").then((m) => ({ default: m.PdfCompress }))),
   "pdf-rotate": lazy(() => import("./pdf-rotate").then((m) => ({ default: m.PdfRotate }))),
-  "pdf-watermark": lazy(() => import("./text-to-pdf").then((m) => ({ default: m.TextToPdf }))),
-  "pdf-page-numbers": lazy(() => import("./text-to-pdf").then((m) => ({ default: m.TextToPdf }))),
+  "pdf-watermark": lazy(() => import("./pdf-watermark").then((m) => ({ default: m.PdfWatermark }))),
+  "pdf-page-numbers": lazy(() => import("./pdf-page-numbers").then((m) => ({ default: m.PdfPageNumbers }))),
+  "pdf-repair": lazy(() => import("./pdf-repair").then((m) => ({ default: m.PdfRepair }))),
+  "pdf-to-jpg": lazy(() => import("./pdf-to-jpg").then((m) => ({ default: m.PdfToJpg }))),
   "pdf-metadata": lazy(() => import("./text-to-pdf").then((m) => ({ default: m.TextToPdf }))),
   "word-counter": lazy(() => import("./word-counter").then((m) => ({ default: m.WordCounter }))),
   "text-diff": lazy(() => import("./text-diff").then((m) => ({ default: m.TextDiff }))),
@@ -134,19 +128,67 @@ const TOOL_MAP: Record<string, ComponentType> = {
   "image-resize": lazy(() => import("./image-resize").then((m) => ({ default: m.ImageResize }))),
   "image-crop": lazy(() => import("./image-crop").then((m) => ({ default: m.ImageCrop }))),
   "image-convert": lazy(() => import("./image-studio").then((m) => ({ default: m.ImageStudio }))),
-  "image-rotate": lazy(() => import("./image-studio").then((m) => ({ default: m.ImageStudio }))),
-  "image-editor": lazy(() => import("./image-studio").then((m) => ({ default: m.ImageStudio }))),
-  "image-watermark": lazy(() => import("./image-studio").then((m) => ({ default: m.ImageStudio }))),
-  "svg-to-png": SvgToPng,
+  "image-rotate": lazy(() => import("./image-rotate").then((m) => ({ default: m.ImageRotate }))),
+  "image-editor": lazy(() => import("./image-editor").then((m) => ({ default: m.ImageEditor }))),
+  "image-watermark": lazy(() => import("./image-watermark").then((m) => ({ default: m.ImageWatermark }))),
+  "bg-remover": lazy(() => import("./bg-remover").then((m) => ({ default: m.BgRemover }))),
+  "bulk-compress": lazy(() => import("./bulk-compress").then((m) => ({ default: m.BulkCompress }))),
+  "svg-to-png": lazy(() => import("./svg-to-png").then((m) => ({ default: m.SvgToPng }))),
+  "png-to-svg": lazy(() => import("./png-to-svg").then((m) => ({ default: m.PngToSvg }))),
+  "photo-enhancer": lazy(() => import("./photo-enhancer").then((m) => ({ default: m.PhotoEnhancer }))),
   "social-resizer": SocialResizer,
   "color-picker": lazy(() => import("./color-picker").then((m) => ({ default: m.ColorPicker }))),
   "image-merger": lazy(() => import("./image-merger").then((m) => ({ default: m.ImageMerger }))),
   "image-to-pdf": lazy(() => import("./images-to-pdf").then((m) => ({ default: m.ImagesToPdf }))),
   "img-metadata": lazy(() => import("./image-studio").then((m) => ({ default: m.ImageStudio }))),
-  "youtube-thumbnail": lazy(() => import("./youtube-thumbnail").then((m) => ({ default: m.YoutubeThumbnail }))),
+  "youtube-thumbnail": lazy(() =>
+    import("./video-downloader-studio").then((m) => ({
+      default: function YoutubeThumbnailTool() {
+        return <m.VideoDownloaderStudio kind="youtube-thumbnail" />;
+      },
+    })),
+  ),
+  "youtube-download": lazy(() =>
+    import("./video-downloader-studio").then((m) => ({
+      default: function YoutubeDownloadTool() {
+        return <m.VideoDownloaderStudio kind="youtube-download" />;
+      },
+    })),
+  ),
+  "youtube-mp3": lazy(() =>
+    import("./video-downloader-studio").then((m) => ({
+      default: function YoutubeMp3Tool() {
+        return <m.VideoDownloaderStudio kind="youtube-mp3" />;
+      },
+    })),
+  ),
+  "instagram-video": lazy(() =>
+    import("./video-downloader-studio").then((m) => ({
+      default: function InstagramVideoTool() {
+        return <m.VideoDownloaderStudio kind="instagram-video" />;
+      },
+    })),
+  ),
+  "instagram-reel": lazy(() =>
+    import("./video-downloader-studio").then((m) => ({
+      default: function InstagramReelTool() {
+        return <m.VideoDownloaderStudio kind="instagram-reel" />;
+      },
+    })),
+  ),
+  "instagram-photo": lazy(() =>
+    import("./video-downloader-studio").then((m) => ({
+      default: function InstagramPhotoTool() {
+        return <m.VideoDownloaderStudio kind="instagram-photo" />;
+      },
+    })),
+  ),
   "pdf-to-word": lazy(() => import("./pdf-to-word").then((m) => ({ default: m.PdfToWord }))),
   "pdf-to-excel": lazy(() => import("./pdf-to-excel").then((m) => ({ default: m.PdfToExcel }))),
   "word-to-pdf": WordToPdf,
+  "excel-to-pdf": lazy(() => import("./excel-to-pdf").then((m) => ({ default: m.ExcelToPdf }))),
+  "ppt-to-pdf": lazy(() => import("./ppt-to-pdf").then((m) => ({ default: m.PptToPdf }))),
+  "pdf-to-ppt": lazy(() => import("./pdf-to-ppt").then((m) => ({ default: m.PdfToPpt }))),
   "image-resize-kb": lazy(() => import("./image-resize-kb").then((m) => ({ default: m.ImageResizeKb }))),
   "pdf-resize-kb": lazy(() => import("./pdf-resize-kb").then((m) => ({ default: m.PdfResizeKb }))),
   "pan-card-resizer": lazy(() => import("./pan-card-resizer").then((m) => ({ default: m.PanCardResizer }))),

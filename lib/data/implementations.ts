@@ -1,6 +1,7 @@
 /** Client-side implemented tool slugs (server-safe list) */
 export const implementedToolSlugs = new Set([
   "pdf-merge", "pdf-split", "pdf-compress", "pdf-rotate", "pdf-watermark", "pdf-page-numbers",
+  "pdf-repair", "pdf-to-jpg",
   "pdf-metadata", "image-to-pdf",
   "pdf-resize-kb",
   "word-counter", "text-diff", "text-to-speech", "text-to-pdf", "txt-to-pdf",
@@ -11,7 +12,8 @@ export const implementedToolSlugs = new Set([
   "password-gen", "qr-generator", "checksum-gen",
   "color-palette", "gradient-gen", "favicon-gen",
   "image-compress", "image-resize", "image-crop", "image-convert", "image-rotate",
-  "image-editor", "image-watermark", "svg-to-png",
+  "image-editor", "image-watermark", "bg-remover", "bulk-compress",
+  "svg-to-png", "png-to-svg", "photo-enhancer",
   "image-resize-kb",
   "pan-card-resizer",
   "passport-photo-resizer",
@@ -23,10 +25,14 @@ export const implementedToolSlugs = new Set([
   "driving-licence-photo-resizer",
   "income-tax-photo-resizer",
   "social-resizer", "color-picker", "image-merger", "img-metadata",
-  "youtube-thumbnail",
+  "youtube-thumbnail", "youtube-download", "youtube-mp3",
+  "instagram-video", "instagram-reel", "instagram-photo",
   "pdf-to-word",
   "pdf-to-excel",
   "word-to-pdf",
+  "excel-to-pdf",
+  "ppt-to-pdf",
+  "pdf-to-ppt",
 ]);
 
 export function isToolImplemented(slug: string): boolean {
