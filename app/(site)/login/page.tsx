@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useState, Suspense, useEffect } from "react";
 import Link from "next/link";
 import { redirectTo } from "@/lib/navigation";
 import { useSearchParams } from "next/navigation";
 import { Eye, EyeOff, LogIn, Mail, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { signIn, signInWithGoogle } from "@/lib/supabase/auth";
+import { signIn, signInWithGoogle, formatAuthError } from "@/lib/supabase/auth";
 import { createClient } from "@/lib/supabase/client";
+import { getSiteUrl } from "@/lib/supabase/site-url";
 
 export default function LoginPage() {
   return (
@@ -25,10 +26,19 @@ function LoginContent() {
   const [showPw, setShowPw] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  useEffect(() => {
+    const authError = searchParams.get("error");
+    if (authError === "auth") {
+      setError("Sign-in failed. Try again with Google or email/password.");
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setSuccess("");
     if (!email || !password) {
       setError("Please fill in all fields.");
       return;
@@ -37,7 +47,7 @@ function LoginContent() {
     const { error: err } = await signIn(email, password);
     setLoading(false);
     if (err) {
-      setError(err.message);
+      setError(formatAuthError(err.message));
       return;
     }
 
@@ -114,7 +124,26 @@ function LoginContent() {
           <div>
             <div className="mb-1.5 flex items-center justify-between">
               <label className="text-sm font-medium">Password</label>
-              <Link href="/login" className="text-xs text-primary hover:underline">Forgot password?</Link>
+              <button
+                type="button"
+                onClick={async () => {
+                  if (!email.trim()) {
+                    setError("Enter your email first, then click Forgot password.");
+                    return;
+                  }
+                  setError("");
+                  setSuccess("");
+                  const supabase = createClient();
+                  const { error: resetErr } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+                    redirectTo: `${getSiteUrl()}/login`,
+                  });
+                  if (resetErr) setError(resetErr.message);
+                  else setSuccess("Password reset link sent — check your email.");
+                }}
+                className="text-xs text-primary hover:underline"
+              >
+                Forgot password?
+              </button>
             </div>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
@@ -126,6 +155,7 @@ function LoginContent() {
           </div>
 
           {error && <p className="rounded-lg bg-error/10 px-3 py-2 text-sm text-error">{error}</p>}
+          {success && <p className="rounded-lg bg-success/10 px-3 py-2 text-sm text-success">{success}</p>}
 
           <Button type="submit" variant="gradient" className="h-11 w-full" disabled={loading}>
             <LogIn className="h-4 w-4" />

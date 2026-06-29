@@ -23,6 +23,7 @@ yarn-error.log*
 # local env files
 .env
 .env*.local
+vercel-env-import.env
 
 # typescript
 *.tsbuildinfo
@@ -31,3 +32,5 @@ yarn-error.log*
 .vscode/*
 !.vscode/extensions.json
 .idea
+.vercel
+.env*

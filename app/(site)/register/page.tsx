@@ -47,8 +47,10 @@ export default function RegisterPage() {
   };
 
   const handleGoogle = async () => {
-    const { error: err } = await signInWithGoogle();
+    setError("");
+    const { data, error: err } = await signInWithGoogle();
     if (err) setError(err.message);
+    else if (data?.url) window.location.href = data.url;
   };
 
   if (success) {

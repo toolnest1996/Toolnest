@@ -1,12 +1,11 @@
+import { getSiteUrl } from "./site-url";
+
 const AUTH_NEXT_COOKIE = "toolnest_auth_next";
 const AUTH_NEXT_MAX_AGE = 600; // 10 minutes
 
-/** OAuth redirect must match Supabase allowlist (usually localhost:3000). */
+/** OAuth redirect must match Supabase allowlist for the current environment. */
 export function getOAuthRedirectOrigin() {
-  if (typeof window === "undefined") {
-    return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-  }
-  return process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin;
+  return getSiteUrl();
 }
 
 /** Store post-login path before OAuth (avoids query params in Supabase redirect URL). */
