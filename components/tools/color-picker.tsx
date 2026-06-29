@@ -593,6 +593,7 @@ export function ColorPicker() {
                 )}
               </div>
             </div>
+            )
           )}
 
           {tab === "export" && (
